@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang = "it">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="3BNdCtfIVg-bB7Lmc2hM2g1JCp_8vQ0YLjBatsTIV80" />
+    <title>Tycheros Game Studios | HomePage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="nav-links">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <h1>Tycheros Game Studios</h1>
+        <form action="search.html" method="get">
+            <input type="text" name="query" placeholder="Cerca...">
+            <button type="submit">Cerca</button>
+            <script>
+               const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                const items = document.querySelectorAll('.item');
+                let hasResults = false;
+
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(query)) {
+                    item.style.display = 'block';
+                    hasResults = true;
+                    } else {
+                    item.style.display = 'none';
+                    }
+                });
+
+                document.getElementById('noResults').style.display = hasResults || query === "" ? 'none' : 'block';
+                })
+            </script>
+        </form>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Homepage</a>
+            <a href="novita.html">Novità</a>
+            <a href="contatti.html">Centro Assistenza TGS Group</a>
+            <a href="vetrina.html">Prodotti</a>
+            
+        </div>
+        <script>
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isOpen = navLinks.classList.toggle('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+        </script>
+    </nav>
+    <div class="site-shell">
+        <header class="hero-banner">
+            
+        </header>
+            <section class="section-card">
+            <h2 style = "color:black">Chi Siamo</h2>
+            <p>Tycheros Game Studios è un gruppo di sviluppo videogiochi il cui obiettivo è stato ed è anche attualmente quello di ridefinire l'esperienza di gioco per come la si conosce, creando giochi innovativi e coinvolgenti che riescano, in un qualche modo, a lasciare un segno indelebile nella mente dei giocatori.</p>
+            <p>Il nostro viaggio inizia nel 2020, sotto il nome “Team Pokken: Gaming And Design”, grazie all’intuizione dell’attuale fondatore e presidente, Matteo Antoniazzi, che ha avuto l’idea di iniziare a creare delle esperienze di gioco uniche e memorabili.</p>
+            <p>Attualmente ci dedichiamo allo sviluppo di videogiochi, app e siti web dedicati al mondo del gaming.</p>
+            </section>
+            
+           
+
+            <section class="section-card">
+                <h2 style = "color:black">La Nostra Storia</h2>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <img style="margin-right: 50px;" src="Logo%20TG.png" alt="Logo TGS">
+                        <div>
+                            <h3><strong>MAGGIO 2020</strong></h3>
+                            <p>Il nostro viaggio inizia così: durante il lock-down nasce Team Pokken: Gaming And Design.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <img src = "vecteezy_youtube-logo-png-youtube-icon-transparent_18930572.png" alt = "Logo YouTube">
+                        <div>
+                            <h3><strong>APRILE 2021</strong></h3>
+                            <p>Viene aperto il canale YouTube ufficiale: <a style = "color:#9da1aa" href = "https://youtube.com/@tycherosgamestudios?si=Lsmo1Hr8k_3C35fK">Canale YouTube</a>.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <img src = "ddd.avif" alt = "Logo Dawn of The Guardians">
+                        <div>
+                            <h3><strong>LUGLIO 2021</strong></h3>
+                            <p>Viene presentato il progetto “Dawn Of The Guardians”, inizialmente noto come “Pokken Leggende Antiche”.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <img src="Logo%20TGS.jpg" alt="Logo Tycheros Game Studios">
+                        <div>
+                            <h3><strong>GIUGNO 2023</strong></h3>
+                            <p>Il nome del gruppo viene ufficialmente cambiato in Tycheros Game Studios.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <img src = "Logo%20Gaming%20Odissey%20News.png" alt = "Logo Gaming Odissey News">
+                        <div>
+                            <h3><strong>GENNAIO 2024</strong></h3>
+                            <p>Nasce Gaming Odyssey News, la divisione dedicata al giornalismo videoludico.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <img src = "Logo%20Dinamic%20Studio.png" alt = "Logo Dinamic Studio">
+                        <div>
+                            <h3><strong>GIUGNO 2025</strong></h3>
+                            <p>Viene inaugurata Dinamic Studio, la divisione dedicata a siti web e applicazioni.</p>
+                        </div>
+                    </article>
+                    
+                </div>
+            </section>
+
+            <br>
+            <section class="videogame-section">
+                <h2 style = "color:black">Dawn Of The Guardians</h2>
+                <br>
+                <p>Avventurati nel vasto e avvincente Regno di Ghorning nei panni di Harold, un eroe che cento anni prima riuscì a fermare la stessa calamità che oggi minaccia il mondo. Risvegliato dopo un secolo di ibernazione, la missione rimane la stessa: riportare il Regno a una nuova gloriosa vita all insegna della pace. 
+                Mentre combatte, però, misteriosi varchi spazio-temporali iniziano a comparire: un mistero che potrebbe svelare il destino del Regno. 
+                </p>
+                <br>
+                <div class="carousel-conteiner">
+                    <div class="carousel">
+                        <img src="ddd.avif" alt="Screenshot 1">
+                        <img src="Primo%20screenshot.jpg" alt="Screenshot 2">
+                        <img src="Secondo%20screenshot.avif" alt="Screenshot 3">
+                        <img src = "Quarto%20screenshot.avif" alt = "Screenshot 4">
+                    </div>
+                </div>
+                <br>
+                    <p> <strong>Stato di sviluppo</strong>: In sviluppo
+                        <br>
+                        <strong>Piattaforma di sviluppo</strong>: RPG Maker MV
+                        <br>
+                        <strong>Genere</strong>: Action RPG
+                        <br>
+                        <strong>Piattaforme</strong>: PC(Windows e MacOS)
+                        <br>
+                        <strong>Lingue supportate</strong>: Italiano, Inglese
+                        <br>
+                        <strong>Data di uscita</strong>: da definire
+                        <br>
+                        <strong>Prezzo</strong>: € 0.00 (gratuito)
+
+
+                   
+                    </p>
+                <br>
+                <a href="dawnoftheguardians.html" class="btn-scopri">Scopri di più</a>
+                <br>
+                <br >
+                 
+            </section>
+
+            <section class="section-card">
+                <h2 style = "color:black">Contattaci</h2>
+                <p>Se desideri ricevere assistenza da parte del team, compila il modulo presente nella sezione <a href = "contatti.html" style = "color:#9da1aa">Centro Assistenza TGS Group</a>. Noi ti risponderemo in seguito mandandoti un'email in privato.</p>
+            </section>
+            <section class="section-card">
+                <h2 style = "color:black">I nostri prodotti</h2>
+                <p>Scopri i nostri prodotti nella sezione <a href = "vetrina.html" style = "color:#9da1aa">Prodotti</a>.</p>
+            </section>
+
+            <section class="section-card">
+                <h2 style = "color:black">Novità</h2>
+                <p>Scopri le ultime novità nella sezione <a href = "novita.html" style = "color:#9da1aa">Novità</a>.</p>
+            </section>
+
+            <section class="social">
+                <h2 style = "color:black">I nostri Social</h2>
+                <div class="social-icons">
+                   <a href = "https://www.youtube.com/@tycherosgamestudios?si=Lsmo1Hr8k_3C35fK">YouTube</a>
+                   <a href = "https://www.instagram.com/tycherosgamestudios/">Instagram</a>
+                   <a href = "https://www.threads.com/@tycherosgamestudios">Threads</a>
+                   <a href = "https://x.com/TeamPokken1?s=20">X (Twitter)</a>
+                   
+
+                </div>
+            </section>
+        <br>
+        <footer>
+            <p>&copy; 2026 Tycheros Game Studios</p>
+            <p style="font-size: 0.85em; color: #888;">
+                Chiampo, Vicenza, Veneto, Italia
+            </p>
+        </footer>
+
+
+    </div>
+</body>
+
+
+</html>

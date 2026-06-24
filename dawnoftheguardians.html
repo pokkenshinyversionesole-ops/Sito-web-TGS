@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang = "it">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Tycheros Game Studios | Dawn Of The Guardians</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="nav-links">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <h1>Tycheros Game Studios</h1>
+        <form action="search.html" method="get">
+            <input type="text" name="query" placeholder="Cerca...">
+            <button type="submit">Cerca</button>
+            <script>
+               const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                const items = document.querySelectorAll('.item');
+                let hasResults = false;
+
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(query)) {
+                    item.style.display = 'block';
+                    hasResults = true;
+                    } else {
+                    item.style.display = 'none';
+                    }
+                });
+
+                document.getElementById('noResults').style.display = hasResults || query === "" ? 'none' : 'block';
+                })
+            </script>
+        </form>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Homepage</a>
+            <a href="novita.html">Novità</a>
+            <a href="contatti.html">Centro Assistenza TGS Group</a>
+            <a href="vetrina.html">Prodotti</a>
+        </div>
+        <script>
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isOpen = navLinks.classList.toggle('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+        </script>
+    </nav>
+    <div class="site-shell">
+        
+        <main class="content-stack">
+            <section class="section-card">
+                <br>
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <div class="carousel-item"><img src="ddd.avif" alt="Screenshot 1"></div>
+                        <div class="carousel-item"><img src="Primo%20screenshot.jpg" alt="Screenshot 2"></div>
+                        <div class="carousel-item"><img src="Secondo%20screenshot.avif" alt="Screenshot 3"></div>
+                        <div class="carousel-item"><img src="Quarto%20screenshot.avif" alt="Screenshot 4"></div>
+                    </div>
+                    <button class="carousel-button prev" type="button" aria-label="Slide precedente">&#10094;</button>
+                    <button class="carousel-button next" type="button" aria-label="Slide successivo">&#10095;</button>
+                </div>
+                <script>
+                    const track = document.querySelector('.carousel-track');
+                    const items = Array.from(document.querySelectorAll('.carousel-item'));
+                    const prevBtn = document.querySelector('.carousel-button.prev');
+                    const nextBtn = document.querySelector('.carousel-button.next');
+                    let currentIndex = 0;
+
+                    const updateButtons = () => {
+                        prevBtn.disabled = currentIndex === 0;
+                        nextBtn.disabled = currentIndex === items.length - 1;
+                    };
+
+                    const scrollToIndex = (index) => {
+                        if (index < 0 || index >= items.length) return;
+                        currentIndex = index;
+                        items[currentIndex].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                        updateButtons();
+                    };
+
+                    nextBtn.addEventListener('click', () => scrollToIndex(currentIndex + 1));
+                    prevBtn.addEventListener('click', () => scrollToIndex(currentIndex - 1));
+
+                    track.addEventListener('scroll', () => {
+                        const center = track.scrollLeft + track.clientWidth / 2;
+                        const closestIndex = items.reduce((closest, item, index) => {
+                            const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+                            return Math.abs(itemCenter - center) < Math.abs(closest.distance - center)
+                                ? { index, distance: itemCenter }
+                                : closest;
+                        }, { index: 0, distance: items[0].offsetLeft + items[0].offsetWidth / 2 }).index;
+                        currentIndex = closestIndex;
+                        updateButtons();
+                    });
+
+                    scrollToIndex(0);
+                </script>
+                <h2 style = "color:black">Dawn Of The Guardians</h2>
+                <p> Marco Il Saggio forma un gruppo il cui nome è “Safe Break”,  con l’obiettivo di annientare tutte quelle creature malvagie sorte con l’inizio della calamità. 
+                    Tra tutti, la missione di riportare il Regno di Ghorning a una nuova e gloriosa vita, viene affidata ad un eroe,  dall’aspetto giovanile , il cui nome è  Harold, messo in ibernazione a seguito di una dura battaglia combattuta cento anni prima contro lo stesso cataclisma, il quale si ripete ciclicamente, noto col nome di “Minaccia di Ninja”. 
+                    Perciò avrà il compito di sconfiggere tutte le venti creature Alfa che minacciano la sicurezza e la pace all'interno del Regno. 
+                    Durante il suo viaggio, però, un fenomeno cattura la sua attenzione: in svariate regioni compaiono dei misteriosi varchi spazio-temporali. 
+                    Questi, sembrano essere collegati, in un qualche modo, con la resurrezione della calamità. 
+                    Consapevole dell’importanza nel conoscere il significato di questi portali, Marco Il Saggio affida ad Harold una nuova sfida: esaminare attentamente i varchi e scoprirne il loro significato nascosto. 
+                    Potrebbe trattarsi di varchi che hanno permesso di far comparire da una dimensione extra terrestre queste creature, oppure un’altra ipotesi consiste in segreti che ancora non sono a conoscenza. 
+                    Avventurati in suggestive regioni, affrontando enigmi e rafforzandone le tue abilità nel corso di questo lungo viaggio verso la libertà. 
+                    Tutta la sperenza ora è rivolta verso Harold, il quale prescelto, possiede la facoltà di determinarne il destino di Ghorning, dimostrandone coraggio e determinazione nella disfatta eterna della calamità, sconfiggere i Boss Alfa e risolvere lo sconosciuto enigma dei varchi spazio-temporali. 
+                    Sarai pronto per sconfiggere le forze del male prima che sia troppo tardi? 
+                </p>
+
+                <br>
+            </section>
+            <p> <strong>Stato di sviluppo</strong>: In sviluppo
+                <br>
+                <strong>Piattaforma di sviluppo</strong>: RPG Maker MV
+                <br>
+                <strong>Genere</strong>: Action RPG
+                <br>
+                <strong>Piattaforme</strong>: PC(Windows e MacOS)
+                <br>
+                <strong>Lingue supportate</strong>: Italiano, Inglese
+                <br>
+                <strong>Data di uscita</strong>: da definire
+                <br>
+                <strong>Prezzo</strong>: € 0.00 (gratuito)
+            </p>
+            <br>
+                <a href = "vetrina.html" class="btn-scopri">Scarica ora</a >
+                <br>
+                <br>
+                <p><strong>Per maggiori dettagli, consulta il sito web ufficiale di Dawn Of The Guardians: </strong></p>
+             
+                <a href = "https://pokkenshinyversion.wixsite.com/dawnoftheguardians" class="btn-scopri">Sito web ufficiale DOTG</a>
+                <br>
+            <br>
+           
+           
+        </main>
+
+    </div>
+</body>
+
+
+
+</html>

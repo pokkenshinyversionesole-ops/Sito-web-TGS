@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang = "it">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Tycheros Game Studios | Contatti</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="nav-links">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <h1>Tycheros Game Studios</h1>
+        <form action="search.html" method="get">
+            <input type="text" name="query" placeholder="Cerca...">
+            <button type="submit">Cerca</button>
+            <script>
+               const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                const items = document.querySelectorAll('.item');
+                let hasResults = false;
+
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(query)) {
+                    item.style.display = 'block';
+                    hasResults = true;
+                    } else {
+                    item.style.display = 'none';
+                    }
+                });
+
+                document.getElementById('noResults').style.display = hasResults || query === "" ? 'none' : 'block';
+                })
+            </script>
+        </form>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Homepage</a>
+            <a href="novita.html">Novità</a>
+            <a href="contatti.html">Centro Assistenza TGS Group</a>
+            <a href="vetrina.html">Prodotti</a>
+        </div>
+        <script>
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isOpen = navLinks.classList.toggle('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+        </script>
+    </nav>
+    <div class="site-shell">
+        <br>
+        <h2>Centro Assistenza</h2>
+        <br>
+      
+        <main class="content-stack">
+            <div class="contact-info">
+                <p><strong>Se desideri ricevere assistenza da parte del team, compila questo modulo. Noi ti risponderemo in seguito mandandoti un'email in privato.</strong></p>
+                <br>
+                <form action="https://formspree.io/f/mgoqjejg" method="POST">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" placeholder="inserisci nome..." required>
+                    <br>
+                    <br>
+                    <label for="surname">Cognome:</label>
+                    <input type="text" id="surname" name="surname" placeholder="inserisci cognome..." required>
+                    <br>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="inserisci email..." required>
+                    <br>
+                    <br>
+                    <label for="message">Messaggio:</label>
+                    <br>
+                    <textarea id="message" name="message" rows="8" placeholder="Scrivi un messaggio..." required></textarea>
+                    <input type="hidden" name="_subject" value="Nuovo messaggio dal sito TGS">
+                    <br>
+                    <button type="submit">Invia</button>
+                </form>
+                <br>
+                <br>
+                <br>
+                <br>
+                <footer>
+                <p>&copy; 2026 Tycheros Game Studios</p>
+                <p style="font-size: 0.85em; color: #888;">
+                    Chiampo, Vicenza, Veneto, Italia
+                </p>
+                </footer>
+            </div>
+        </main>
+    </div>
+   
+</body>
+
+</html>

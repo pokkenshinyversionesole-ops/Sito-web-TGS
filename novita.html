@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang = "it">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Tycheros Game Studios | Novità </title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="nav-links">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <h1>Tycheros Game Studios</h1>
+        <form action="search.html" method="get">
+            <input type="text" name="query" placeholder="Cerca...">
+            <button type="submit">Cerca</button>
+            <script>
+               const searchInput = document.getElementById('searchInput');
+                searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                const items = document.querySelectorAll('.item');
+                let hasResults = false;
+
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(query)) {
+                    item.style.display = 'block';
+                    hasResults = true;
+                    } else {
+                    item.style.display = 'none';
+                    }
+                });
+
+                document.getElementById('noResults').style.display = hasResults || query === "" ? 'none' : 'block';
+                })
+            </script>
+        </form>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Homepage</a>
+            <a href="novita.html">Novità</a>
+            <a href="contatti.html">Centro Assistenza TGS Group</a>
+            <a href="vetrina.html">Prodotti</a>
+        </div>
+        <script>
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isOpen = navLinks.classList.toggle('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+        </script>
+    </nav>
+    <div class="site-shell">
+        
+        <main class="content-stack">
+            <div class="news-item">
+                <!-- Elfsight Blog | Untitled Blog -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-a09ed11a-fcc4-4ac3-a4dd-de56fba0f3ab" data-elfsight-app-lazy></div>
+                <footer>
+                    <p>&copy; 2026 Tycheros Game Studios</p>
+                    <p style="font-size: 0.85em; color: #888;">
+                        Chiampo, Vicenza, Veneto, Italia
+                    </p>
+                </footer>
+            </div>
+        </main>
+    </div>
+    
+</body>
+</html>
